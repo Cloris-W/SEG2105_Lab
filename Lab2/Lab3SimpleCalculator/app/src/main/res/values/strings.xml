@@ -12,8 +12,8 @@
     <string name="button_9">9</string>
     <string name="button_add">+</string>
     <string name="button_sub">-</string>
-    <string name="button_mult">×</string>
-    <string name="button_div">/</string>
+    <string name="button_mult">\u00D7</string>
+    <string name="button_div">\u00F7</string>
     <string name="button_dot">.</string>
     <string name="button_ce">CE</string>
     <string name="button_eq">=</string>
