@@ -2,6 +2,6 @@ package com.lab1;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("different message");
+        System.out.println("third different message");
     }
 }
