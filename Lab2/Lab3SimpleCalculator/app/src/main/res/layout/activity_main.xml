@@ -34,7 +34,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn07Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_7" />
 
             <Button
@@ -42,7 +42,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn08Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_8" />
 
             <Button
@@ -50,7 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn09Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_9" />
 
             <Button
@@ -58,7 +58,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btnDivClick"
+                android:onClick="onClickFunctionButton"
                 android:text="@string/button_div" />
         </LinearLayout>
 
@@ -74,7 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn04Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_4" />
 
             <Button
@@ -82,7 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn05Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_5" />
 
             <Button
@@ -90,7 +90,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn06Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_6" />
 
             <Button
@@ -98,7 +98,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btnMultClick"
+                android:onClick="onClickFunctionButton"
                 android:text="@string/button_mult" />
         </LinearLayout>
 
@@ -114,7 +114,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn01Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_1" />
 
             <Button
@@ -122,7 +122,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn02Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_2" />
 
             <Button
@@ -130,7 +130,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn03Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_3" />
 
             <Button
@@ -138,7 +138,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btnSubClick"
+                android:onClick="onClickFunctionButton"
                 android:text="@string/button_sub" />
         </LinearLayout>
 
@@ -154,7 +154,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btnCeClick"
+                android:onClick="onClickFunctionButton"
                 android:text="@string/button_ce" />
 
             <Button
@@ -162,7 +162,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btn00Click"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_0" />
 
             <Button
@@ -170,7 +170,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btnDotClick"
+                android:onClick="onClickNumericalButton"
                 android:text="@string/button_dot" />
 
             <Button
@@ -178,7 +178,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btnAddClick"
+                android:onClick="onClickFunctionButton"
                 android:text="@string/button_add" />
         </LinearLayout>
 
@@ -194,7 +194,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btnResultClick"
+                android:onClick="onClickFunctionButton"
                 android:text="@string/button_eq" />
 
         </LinearLayout>

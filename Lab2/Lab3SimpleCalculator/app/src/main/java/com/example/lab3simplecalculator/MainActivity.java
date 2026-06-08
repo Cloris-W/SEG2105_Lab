@@ -12,9 +12,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private enum Operator { none, add, minus, multiply, divide, eq }
-    private double data1 = 0, data2 = 0;
-    private Operator optr = Operator.none;
+    private enum Operator { none, add, sub, mul, div, eq }
+    private double data01 = 0, data02 = 0;
+    private Operator opp = Operator.none;
     private boolean requiresCleaning = false;
     private boolean hasDot = false;
 
@@ -30,136 +30,118 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void btn00Click(View view) {
-        appendNumber("0");
-    }
+    public void onClickNumericalButton(View view) {
+        int pressID = view.getId();
+        TextView curText = (TextView) findViewById(R.id.resultEdit);
 
-    public void btn01Click(View view) {
-        appendNumber("1");
-    }
-
-    public void btn02Click(View view) {
-        appendNumber("2");
-    }
-
-    public void btn03Click(View view) {
-        appendNumber("3");
-    }
-
-    public void btn04Click(View view) {
-        appendNumber("4");
-    }
-
-    public void btn05Click(View view) {
-        appendNumber("5");
-    }
-
-    public void btn06Click(View view) {
-        appendNumber("6");
-    }
-
-    public void btn07Click(View view) {
-        appendNumber("7");
-    }
-
-    public void btn08Click(View view) {
-        appendNumber("8");
-    }
-
-    public void btn09Click(View view) {
-        appendNumber("9");
-    }
-
-    private void appendNumber(String num) {
-        TextView eText = (TextView) findViewById(R.id.resultEdit);
-        if (requiresCleaning) {
-            eText.setText("");
-            requiresCleaning = false;
-        }
-        eText.setText(eText.getText() + num);
-    }
-
-    public void btnAddClick(View view) {
-        handleOperator(Operator.add);
-    }
-
-    public void btnSubClick(View view) {
-        handleOperator(Operator.minus);
-    }
-
-    public void btnMultClick(View view) {
-        handleOperator(Operator.multiply);
-    }
-
-    public void btnDivClick(View view) {
-        handleOperator(Operator.divide);
-    }
-
-    private void handleOperator(Operator op) {
-        TextView eText = (TextView) findViewById(R.id.resultEdit);
-        String text = eText.getText().toString();
-        if (!text.isEmpty()) {
-            data1 = Double.parseDouble(text);
-            optr = op;
-            eText.setText("");
+        if (opp == Operator.eq) {
+            opp = Operator.none;
+            curText.setText("");
             hasDot = false;
         }
-    }
 
-    public void btnDotClick(View view) {
-        TextView eText = (TextView) findViewById(R.id.resultEdit);
         if (requiresCleaning) {
-            eText.setText("");
             requiresCleaning = false;
+            curText.setText("");
             hasDot = false;
         }
-        if (!hasDot) {
-            eText.setText(eText.getText() + ".");
-            hasDot = true;
+
+        if (pressID == R.id.button00) {
+            curText.append("0");
+        } else if (pressID == R.id.button01) {
+            curText.append("1");
+        } else if (pressID == R.id.button02) {
+            curText.append("2");
+        } else if (pressID == R.id.button03) {
+            curText.append("3");
+        } else if (pressID == R.id.button04) {
+            curText.append("4");
+        } else if (pressID == R.id.button05) {
+            curText.append("5");
+        } else if (pressID == R.id.button06) {
+            curText.append("6");
+        } else if (pressID == R.id.button07) {
+            curText.append("7");
+        } else if (pressID == R.id.button08) {
+            curText.append("8");
+        } else if (pressID == R.id.button09) {
+            curText.append("9");
+        } else if (pressID == R.id.buttonDot) {
+            if (!hasDot) {
+                curText.append(".");
+                hasDot = true;
+            }
+        } else {
+            curText.setText("ERROR");
         }
     }
 
-    public void btnCeClick(View view) {
-        TextView eText = (TextView) findViewById(R.id.resultEdit);
-        eText.setText("");
-        data1 = 0;
-        data2 = 0;
-        optr = Operator.none;
-        hasDot = false;
-        requiresCleaning = false;
-    }
+    public void onClickFunctionButton(View view) {
+        int pressID = view.getId();
+        TextView curText = (TextView) findViewById(R.id.resultEdit);
 
-    public void btnResultClick(View view) {
-        if (optr != Operator.none) {
-            TextView eText = (TextView) findViewById(R.id.resultEdit);
-            String text = eText.getText().toString();
-            if (!text.isEmpty()) {
-                data2 = Double.parseDouble(text);
-                double result = 0;
-                boolean error = false;
-                if (optr == Operator.add) {
-                    result = data1 + data2;
-                } else if (optr == Operator.minus) {
-                    result = data1 - data2;
-                } else if (optr == Operator.multiply) {
-                    result = data1 * data2;
-                } else if (optr == Operator.divide) {
-                    if (data2 != 0) {
-                        result = data1 / data2;
+        if (pressID == R.id.buttonCe) {
+            opp = Operator.none;
+            curText.setText("");
+            data01 = 0;
+            data02 = 0;
+            requiresCleaning = false;
+            hasDot = false;
+            return;
+        }
+
+        String dataText = curText.getText().toString();
+        double numberVal = dataText.length() > 0 ? Double.parseDouble(dataText) : 0;
+
+        if (opp == Operator.none) {
+            data01 = numberVal;
+            requiresCleaning = true;
+            if (pressID == R.id.buttonAdd) {
+                opp = Operator.add;
+            } else if (pressID == R.id.buttonSub) {
+                opp = Operator.sub;
+            } else if (pressID == R.id.buttonMult) {
+                opp = Operator.mul;
+            } else if (pressID == R.id.buttonDiv) {
+                opp = Operator.div;
+            }
+        } else {
+            data02 = numberVal;
+            double result = 0;
+            boolean error = false;
+            switch (opp) {
+                case add: result = data01 + data02; break;
+                case sub: result = data01 - data02; break;
+                case mul: result = data01 * data02; break;
+                case div:
+                    if (data02 != 0) {
+                        result = data01 / data02;
                     } else {
                         error = true;
                     }
-                }
-
-                if (error) {
-                    eText.setText("Error");
-                } else {
-                    eText.setText(String.valueOf(result));
-                }
-                optr = Operator.none;
-                requiresCleaning = true;
-                hasDot = false;
+                    break;
             }
+            if (error) {
+                curText.setText("Error");
+                data01 = 0;
+                opp = Operator.none;
+            } else {
+                data01 = result;
+                if (pressID == R.id.buttonEq) {
+                    opp = Operator.eq;
+                } else if (pressID == R.id.buttonAdd) {
+                    opp = Operator.add;
+                } else if (pressID == R.id.buttonSub) {
+                    opp = Operator.sub;
+                } else if (pressID == R.id.buttonMult) {
+                    opp = Operator.mul;
+                } else if (pressID == R.id.buttonDiv) {
+                    opp = Operator.div;
+                }
+                curText.setText(String.valueOf(result));
+            }
+            requiresCleaning = true;
+            hasDot = false;
         }
     }
 }
