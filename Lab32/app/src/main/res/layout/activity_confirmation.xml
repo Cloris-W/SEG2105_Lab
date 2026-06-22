@@ -10,9 +10,9 @@
         android:id="@+id/teamLogoId"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="24dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="24dp"
         android:contentDescription="Team Logo" />
 
     <TextView
