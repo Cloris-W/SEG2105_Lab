@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:context=".LogoSelectActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a new Logo"
+        android:textSize="24sp"
+        android:layout_marginBottom="24dp" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <ImageView
+                android:id="@+id/teamid00"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_logo_00"
+                android:padding="8dp"
+                android:onClick="setTeamLogo" />
+            <ImageView
+                android:id="@+id/teamid01"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_logo_01"
+                android:padding="8dp"
+                android:onClick="setTeamLogo" />
+            <ImageView
+                android:id="@+id/teamid02"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_logo_02"
+                android:padding="8dp"
+                android:onClick="setTeamLogo" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView
+                android:id="@+id/teamid03"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_logo_03"
+                android:padding="8dp"
+                android:onClick="setTeamLogo" />
+            <ImageView
+                android:id="@+id/teamid04"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_logo_04"
+                android:padding="8dp"
+                android:onClick="setTeamLogo" />
+            <ImageView
+                android:id="@+id/teamid05"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_logo_05"
+                android:padding="8dp"
+                android:onClick="setTeamLogo" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
