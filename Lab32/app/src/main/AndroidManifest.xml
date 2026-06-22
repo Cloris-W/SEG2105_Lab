@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LogoSelectActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ConfirmationActivity" />
     </application>
 
 </manifest>
