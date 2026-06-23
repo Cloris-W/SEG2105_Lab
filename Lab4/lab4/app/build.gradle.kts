@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
 
     // Add the dependency for the Google services Gradle plugin
-    id("com.google.gms.google-services") version "4.5.0" apply false
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.activity.ktx)
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
+    implementation(libs.firebase.database)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
@@ -53,6 +54,8 @@ dependencies {
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database")
 
 
     // Add the dependencies for any other desired Firebase products
