@@ -18,9 +18,11 @@ jobs:
           - project_path: Lab7/lab4
             app_path: app
             needs_firebase: true
+            name: Lab7-lab4
           - project_path: Lab8
             app_path: lab5/app
             needs_firebase: false
+            name: Lab8
 
     steps:
       - name: Check out the code
@@ -57,5 +59,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: unit-test-report-${{ strategy.job-index }}
+          name: unit-test-report-${{ matrix.name }}
           path: ${{ matrix.project_path }}/${{ matrix.app_path }}/build/reports/tests/testDebugUnitTest
