@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView idView;
@@ -42,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
         // Step 10: Use the MyDBHandler in newProduct to add a product to the database
         MyDBHandler dbHandler = new MyDBHandler(this);
         int sku = Integer.parseInt(skuBox.getText().toString());
+
+        if (!ProductValidator.isValidSku(sku)) {
+            Toast.makeText(this, "Invalid SKU. Must be positive.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         Product product = new Product(productBox.getText().toString(), sku);
 

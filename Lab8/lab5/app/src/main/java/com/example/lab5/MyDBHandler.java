@@ -97,7 +97,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_SKU, product.getSku());
         int rows = db.update(TABLE_PRODUCTS, values,
                 COLUMN_ID + " = ?",
-                new String[]{ String.valueOf(product.getId()) });
+                new String[]{ String.valueOf(product.getID()) });
         db.close();
         return rows > 0; // false if no product had that id
     }

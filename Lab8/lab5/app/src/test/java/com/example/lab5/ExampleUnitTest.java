@@ -14,4 +14,15 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+    // ProductValidator.java (app/src/main/java/...)
+    public static boolean isValidSku(int sku) {
+        return sku > 0;
+    }
+
+    @Test
+    public void skuMustBePositive() {
+        assertFalse(ProductValidator.isValidSku(0));
+        assertFalse(ProductValidator.isValidSku(-42));
+        assertTrue(ProductValidator.isValidSku(1001));
+    }
 }
