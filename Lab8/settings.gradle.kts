@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Lab5"
 include(":app")
+project(":app").projectDir = file("lab5/app")
