@@ -25,24 +25,28 @@ jobs:
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          wrapper-validation-enabled: false
 
       - name: Create google-services.json
         env:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: echo "$GOOGLE_SERVICES_JSON" > app/google-services.json
+        run: echo "$GOOGLE_SERVICES_JSON" > Lab7/lab4/app/google-services.json
 
       - name: Make gradlew executable
-        run: chmod +x gradlew
+        run: chmod +x Lab7/lab4/gradlew
 
       - name: Build the app
         run: ./gradlew assembleDebug --stacktrace
+        working-directory: Lab7/lab4
 
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest --stacktrace
+        working-directory: Lab7/lab4
 
       - name: Upload unit-test report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: unit-test-report
-          path: app/build/reports/tests/testDebugUnitTest
+          path: Lab7/lab4/app/build/reports/tests/testDebugUnitTest
