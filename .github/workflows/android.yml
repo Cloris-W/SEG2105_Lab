@@ -25,8 +25,8 @@ jobs:
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
-        with:
-          wrapper-validation-enabled: false
+        # with:
+        #   wrapper-validation-enabled: false
 
       - name: Create google-services.json
         env:
